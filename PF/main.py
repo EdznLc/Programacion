@@ -96,13 +96,13 @@ class App:
                             print(f"+{'-'*5}+{'-'*22}+{'-'*22}+{'-'*17}+{'-'*27}+{'-'*27}+{'-'*6}+")
                     self.funciones.esperarTecla()
                 case "6" | "EXPORTAR":
-                    nombre_tabla = "clientes"  
+                    nombre_tabla = "clientes"
                     query = f"SELECT * FROM {nombre_tabla}"
                     df = pd.read_sql(query, con=self.conexion) # Usa el atributo de instancia
                     df.to_excel("clientes.xlsx", index=False, engine="openpyxl")
                     os.startfile(os.getcwd())
                 case "7" | "SALIR":
-                    opcion = False    
+                    opcion = False
                     self.funciones.borrarPantalla()
                     print("\n\t\t 🥺 Volviendo al menu principal 🥺​ ")
                 case _: 
@@ -208,7 +208,7 @@ class App:
                     wb.save(archivo)
                     os.startfile(os.getcwd())
                 case "7" | "SALIR":
-                    opcion = False    
+                    opcion = False
                     self.funciones.borrarPantalla()
                     print("\n\t\t 🥺 Volviendo al menu principal 🥺​ ") 
                 case _: 
@@ -256,7 +256,7 @@ class App:
                         print("\n\t⚠️  Email y/o contrasena incorrecta, vuelva a intentarlo...  ⚠️")
                     self.funciones.esperarTecla() 
                 case "3" | "SALIR":
-                    opcion = False    
+                    opcion = False
                     self.funciones.borrarPantalla()
                     input("\n\t\t 🥺​ Terminaste la ejecucion del SW 🥺​ ")
                 case _: 
